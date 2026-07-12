@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ movie[1] }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #0d0d0d; color: #fff; margin: 0; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { max-width: 600px; width: 100%; background: #1a1a1a; padding: 30px; border-radius: 16px; text-align: center; box-shadow: 0 0 30px rgba(0,0,0,0.8); }
+        .poster { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #333; }
+        h1 { color: #ffcc00; margin: 10px 0; font-size: 28px; }
+        .desc { color: #ccc; line-height: 1.6; margin-bottom: 20px; text-align: left; }
+        .date { color: #666; font-size: 14px; margin-bottom: 30px; display: block; }
+        
+        /* Telegram ခလုတ် */
+        .telegram-btn { 
+            display: inline-block; 
+            background: #0088cc; 
+            color: #fff; 
+            padding: 16px 50px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-size: 20px; 
+            font-weight: bold; 
+            border: none; 
+            cursor: pointer; 
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+        }
+        .telegram-btn:hover { background: #006699; transform: scale(1.05); }
+        .back-link { display: inline-block; margin-top: 20px; color: #aaa; text-decoration: none; font-size: 14px; }
+        .back-link:hover { color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Poster -->
+        <img src="{{ poster_url }}" alt="{{ movie[1] }}" class="poster">
+        
+        <!-- Title -->
+        <h1>🎬 {{ movie[1] }}</h1>
+        
+        <!-- Description -->
+        <p class="desc">{{ movie[2] }}</p>
+        
+        <!-- ရက်စွဲ -->
+        <span class="date">📅 {{ movie[4] }}</span>
+        
+        <!-- Telegram ထဲသွားမယ့် ခလုတ် -->
+        <a href="{{ telegram_link }}" target="_blank" class="telegram-btn">▶ Watch on Telegram</a>
+        
+        <br>
+        <a href="/" class="back-link">⬅ Back to Movie List</a>
+    </div>
+</body>
+  </html>
